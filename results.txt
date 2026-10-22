@@ -1,0 +1,49 @@
+shape: (891, 12)
+null counts:
+ PassengerId      0
+Survived         0
+Pclass           0
+Name             0
+Sex              0
+Age            177
+SibSp            0
+Parch            0
+Ticket           0
+Fare             0
+Cabin          687
+Embarked         2
+dtype: int64
+
+GroupBy - Summary by Family Group:
+              SurvivalRate  Count  FemaleRatio  FirstClassRatio
+FamilyGroup                                                   
+Alone               0.304    537        0.235            0.203
+2-4                 0.579    292        0.531            0.346
+5+                  0.161     62        0.532            0.097
+
+GroupBy - Alone vs Family:
+            SurvivalRate  FemaleRatio
+HasFamily                           
+Alone             0.304        0.235
+Family            0.506        0.531
+
+Pivot Table - Survival rate by Sex/HasFamily and Pclass:
+ Pclass                1      2      3
+Sex    HasFamily                     
+female Alone      0.971  0.906  0.617
+       Family     0.967  0.932  0.417
+male   Alone      0.333  0.097  0.121
+       Family     0.426  0.278  0.181
+
+Pivot Table - Count:
+ Pclass             1   2    3
+Sex    HasFamily             
+female Alone      34  32   60
+       Family     60  44   84
+male   Alone      75  72  264
+       Family     47  36   83
+
+Insights:
+- 가족 수와 생존율은 역U자형이다: 혼자 30.4% → 2~4명 57.9% → 5명 이상 16.1%
+- 가족 동반자 생존율(50.6%)이 혼자(30.4%)보다 높아 보이는 것은 가족 동반 그룹의 여성 비율(53.1%)이 혼자 그룹(23.5%)보다 높기 때문이다
+- 3등석 여성은 가족이 있으면 생존율이 61.7% → 41.7%로 낮아진다. 아이들과 함께 움직이느라 탈출이 어려웠을 가능성이 있다

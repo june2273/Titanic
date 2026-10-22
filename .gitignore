@@ -1,0 +1,18 @@
+.venv/
+.idea/
+.claude/
+CLAUDE.md
+__pycache__/
+.DS_Store
+
+# Kaggle data: download link in README
+*.csv
+
+# Coursework submissions (student ID)
+*.zip
+C289028*
+imgs/chap_02/
+
+# Scratch / duplicate scripts
+/teset.py
+/imgs/main.py
